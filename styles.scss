@@ -1,0 +1,402 @@
+// @use 'sass:math';
+@import "assets/scss/colors";
+@import "assets/scss/mixins";
+@import "assets/scss/variables&functions";
+
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+html {
+    font-size: 10px;
+    direction: $direction;
+}
+
+.l-master {
+    position: relative;
+    width: toRem(2056px);
+    height: toRem(1236px);
+    background-image: url("assets/images/background-imag.png");
+
+    .contactus {
+        position: absolute;
+        width: toRem(1440px);
+        height: toRem(900px);
+        left: calc(50% - toRem(1440px)/2);
+        top: calc(50% - toRem(900px)/2);
+
+        background: $whiteColor;
+        box-shadow: toRem(0px) toRem(141px) toRem(200px) toRem(-80px) rgba(25, 58, 75, 0.3);
+        border-radius: toRem(50px);
+
+        .contactus-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: toRem(0px);
+            gap: toRem(60px);
+
+            position: absolute;
+            width: toRem(545px);
+            height: toRem(604px);
+            #{$left}: toRem(150px);
+            top: toRem(148px);
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: toRem(0px);
+                gap: toRem(40px);
+
+                width: toRem(545px);
+                height: toRem(504px);
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+
+                .form-title {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: toRem(0px);
+                    gap: toRem(20px);
+
+                    width: toRem(45px);
+                    height: toRem(134px);
+
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+
+                    .form-title-text {
+                        @include form-title-text($blackColor);
+
+                        .form-title-touch {
+                            @extend .form-title-text;
+                            color: $pinkColor;
+                        }
+                    }
+
+                    .form-title-desc {
+
+                        width: toRem(545px);
+                        height: toRem(48px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(14px);
+                        line-height: toRem(24px);
+                        /* or 171% */
+
+                        letter-spacing: 0.01em;
+
+                        color: $blackColor;
+                    }
+                }
+
+                ::placeholder {
+                    height: toRem(24px);
+
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: toRem(14px);
+                    line-height: toRem(24px);
+
+                    letter-spacing: 0.01em;
+
+                    color: darkGrayColor;
+
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                }
+
+                .form-inputs {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: toRem(0px);
+                    gap: toRem(40px);
+
+                    width: toRem(545px);
+                    height: toRem(504px);
+
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+
+                    .name {
+                        @include text-input(0);
+                    }
+
+                    .email {
+                        @include text-input(1);
+                    }
+
+                    .phone {
+                        @include text-input(2);
+                    }
+
+                    .dropdown {
+                        box-sizing: border-box;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: toRem(12px) toRem(20px);
+                        gap: toRem(10px);
+                        font-size: toRem(14px);
+                        width: toRem(545px);
+                        height: toRem(50px);
+
+                        border: toRem(1px) solid $lightGrayColor;
+
+                        flex: none;
+                        order: 3;
+                        flex-grow: 0;
+                    }
+
+                    .btn {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        padding: toRem(12px) toRem(24px);
+                        gap: toRem(10px);
+
+                        width: toRem(545px);
+                        height: toRem(50px);
+
+                        background: $pinkColor;
+
+                        flex: none;
+                        order: 4;
+                        flex-grow: 0;
+
+                        .btn-text {
+                            width: toRem(48px);
+                            height: toRem(20px);
+
+                            font-family: $font;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: toRem(16px);
+                            line-height: toRem(20px);
+
+                            text-transform: uppercase;
+
+                            color: $whiteColor;
+
+                            flex: none;
+                            order: 0;
+                            flex-grow: 0;
+                        }
+                    }
+                }
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: toRem(5px);
+                gap: toRem(60px);
+                margin-top: toRem(60px);
+
+                width: toRem(532px);
+                height: toRem(40px);
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+
+                .phone-contact-info {
+                    @include contact-info-methods(toRem(127px), 0);
+
+                    .phone-icon {
+                        width: toRem(37px);
+                        height: toRem(37px);
+
+                        flex: none;
+                        order: 0;
+                        flex-grow: 0;
+                    }
+
+                    .phone-contact-info-text {
+                        // width: toRem(84px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        color: $blackColor;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                    }
+
+                    .phone-contact-info-text-2 {
+                        // width: toRem(84px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                        color: $pinkColor;
+                    }
+                }
+
+                .fax-contact-info {
+                    @include contact-info-methods(toRem(127px), 1);
+
+                    .fax-icon {
+                        width: toRem(37px);
+                        height: toRem(37px);
+
+                        flex: none;
+                        order: 0;
+                        flex-grow: 0;
+                    }
+
+                    .fax-contact-info-text {
+                        // width: toRem(135px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        color: $blackColor;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                    }
+
+                    .fax-contact-info-text-2 {
+                        // width: toRem(135px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                        color: $pinkColor;
+                    }
+                }
+
+                .email-contact-info {
+                    @include contact-info-methods(178px, 2);
+
+                    .email-icon {
+                        width: toRem(37px);
+                        height: toRem(37px);
+
+                        flex: none;
+                        order: 0;
+                        flex-grow: 0;
+                    }
+
+                    .email-contact-info-text {
+                        // width: toRem(135px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        color: $blackColor;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                    }
+
+                    .email-contact-info-text-2 {
+                        // width: toRem(135px);
+                        // height: toRem(40px);
+
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: toRem(13px);
+                        //line-height: toRem(20px);
+
+                        letter-spacing: 0.02em;
+
+                        flex: none;
+                        order: 1;
+                        flex-grow: 0;
+                        color: $pinkColor;
+                    }
+                }
+            }
+        }
+
+        .map {
+            position: absolute;
+            width: toRem(545px);
+            height: toRem(700px);
+            #{$left}: toRem(745px);
+            top: toRem(100px);
+            //background-image: url("assets/images/map.png");
+            z-index: 100;
+            // position: fixed;
+
+            // .map-rectangle {
+            //     position: absolute;
+            //     left: 0%;
+            //     right: 0%;
+            //     top: 0%;
+            //     bottom: 0%;
+            // }
+        }
+
+        .contactus-blue-rectangle {
+            position: absolute;
+            width: toRem(419px);
+            height: toRem(900px);
+            #{$left}: toRem(1021px);
+            top: toRem(0px);
+
+            background: $darkBlueColor;
+
+            z-index: 99;
+
+            border-top-#{$right}-radius: toRem(50px);
+            border-bottom-#{$right}-radius: toRem(50px);
+        }
+    }
+}

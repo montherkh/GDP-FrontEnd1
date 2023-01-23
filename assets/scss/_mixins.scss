@@ -1,0 +1,59 @@
+@mixin form-title-text($color) {
+    width: toRem(356px);
+    height: toRem(66px);
+
+    font-family: $font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: toRem(54px);
+    line-height: toRem(66px);
+
+    color: $color;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+@mixin text-input($order) {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: toRem(12px) toRem(20px);
+    gap: toRem(10px);
+
+    width: toRem(545px);
+    height: toRem(50px);
+
+    /* Gray 5 */
+
+    border: 1px solid $lightGrayColor;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: $order;
+    flex-grow: 0;
+}
+
+@mixin contact-info-methods($width, $order) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: toRem(0px);
+    gap: toRem(15px);
+
+    width: $width;
+    height: toRem(40px);
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: $order;
+    flex-grow: 0;
+}

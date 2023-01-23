@@ -1,0 +1,9 @@
+$font: 'Montserrat';
+$direction: ltr;
+$left: 'left';
+$right: 'right';
+
+@function toRem($px) {
+    //@return math.div($px, 16px) * 1rem;
+    @return #{$px / 16px}rem;
+}
